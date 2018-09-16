@@ -1,0 +1,77 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# C# Dotnet Core Stuff
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Pp]ub/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# These contain secrets! 
+.env
+azure.json
+*.myparam.json
+appsettings.json
+environment.live.ts
+myvalues.yaml
+**/*.bot
+
+# Visual Studio Code - BC changed my mind, allowed this in the repo
+#.vscode
+
+# Compiled output
+dist/
+tmp/
+tmp.zip

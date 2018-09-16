@@ -1,0 +1,44 @@
+#
+# Backend api 2 deployment.
+#
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: backend-api-2
+  labels:
+    app: backend-api-2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-api-2
+  template:
+    metadata:
+      labels:
+        app: backend-api-2
+    spec:
+      containers:
+      - name: backend-api-2-pods
+
+        image: localhost:5000/microservice-example-1/backend-api2:latest
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 3020
+
+        env:       
+        - name: PORT
+          value: "3020"
+
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3020
+          initialDelaySeconds: 3
+          periodSeconds: 20
+
+        resources:
+          requests:
+            memory: "256M"
+            cpu: 0.25

@@ -1,0 +1,21 @@
+# Standard stuff
+Dockerfile*
+**/*Dockerfile*
+docker-compose*
+.dockerignore
+.git
+.gitignore
+readme.md
+**/readme.md
+**/LICENSE
+.vscode/
+
+# Node stuff
+node_modules
+**/node_modules
+**/*.log
+
+# Outputs, binaries etc
+
+# Project specific folders
+kubernetes/

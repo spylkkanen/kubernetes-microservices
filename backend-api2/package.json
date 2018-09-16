@@ -1,0 +1,20 @@
+{
+  "name": "backend-api2",
+  "version": "1.0.0",
+  "main": "server.js",
+  "engines": {
+    "node": "^8.11.1"
+  },
+  "description": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/spylkkanen/kubernetes-microservices",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2"
+  }
+}
