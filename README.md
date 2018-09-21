@@ -1,3 +1,6 @@
+[![Build status](https://spylkkanen.visualstudio.com/kubernetes-microservices/_apis/build/status/kubernetes-microservices-Docker%20container-CI)]
+[![Release status](https://spylkkanen.vsrm.visualstudio.com/_apis/public/Release/badge/91705780-23f2-4c51-8f8d-bd251a855be4/1/1)]
+
 # Overview
 This is simple nodejs based application designed to showcase microservices in docker and kubernetes. Application contains one web application and two REST api services where one of the service is internal which is not directly accessible from internet.
 
@@ -655,3 +658,23 @@ kubectl logs frontend-657dcc9684-dj8z8
 kubectl exec -it frontend-866f7bff9f-7gf88 -- /bin/bash
 ```
 ---
+
+
+# Azure
+
+az acr login --name <AzureContainerRegistryName>
+
+kubectl config use-context <AzureKubernetesClusterName>
+
+https://github.com/dtzar/blog/tree/master/CD-Kubernetes-VSTS
+1. Create VSTS pipeline
+2. Add Kubernetes service to VSTS and create connection between VSTS and Kubernetes
+az aks create --name <AzureKubernetesClusterName> --resource-group <AzureResourceGroupName> --generate-ssh-keys
+3. kubectl config view
+- ${HOME}/.kube/config for Linux systems
+- %UserProfile%\.kube\config for Windows machines
+
+kubenetes <-> azure ACR authentication
+kubectl create secret docker-registry acr-auth --docker-server <AzureKubernetesClusterName>.azurecr.io --docker-username <AzureResourceGroupName> --docker-password <docker_password> --docker-email <email_address>
+
+https://mohitgoyal.co/2017/09/21/configure-cicd-for-dockerized-apps-using-vsts-to-kubernetes-cluster-in-acs/

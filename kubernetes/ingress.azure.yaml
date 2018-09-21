@@ -1,0 +1,26 @@
+#
+# Ingress routing.
+#
+
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "microservices-example-ingress"
+  annotations:
+spec:
+  rules:
+  - host: spylkkanen.f791b2e6cfe44a199bfd.northeurope.aksapp.io
+    http:
+      paths:
+      - path: /api/config
+        backend:
+          serviceName: frontend-svc
+          servicePort: 80
+      - path: /api
+        backend:
+          serviceName: backend-api-1-svc
+          servicePort: 80
+      - path: /
+        backend:
+          serviceName: frontend-svc
+          servicePort: 80

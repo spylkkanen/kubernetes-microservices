@@ -21,7 +21,7 @@ spec:
       containers:
       - name: backend-api-1-pods
 
-        image: localhost:5000/microservice-example-1/backend-api1:latest
+        image: spylkkanen.azurecr.io/microservice-example-1/backend-api1:latest
         imagePullPolicy: Always
 
         ports:
