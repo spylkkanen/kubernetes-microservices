@@ -7,10 +7,11 @@ apiVersion: extensions/v1beta1
 metadata:
   name: "microservices-example-ingress"
   annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: spylkkanen.f791b2e6cfe44a199bfd.northeurope.aksapp.io
-    http:
+  #- host: spylkkanen.f791b2e6cfe44a199bfd.northeurope.aksapp.io
+  - http:
       paths:
       - path: /api/config
         backend:
