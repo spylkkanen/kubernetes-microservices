@@ -20,7 +20,7 @@ spec:
     spec:
       imagePullSecrets:
       - name: acr-auth
-      
+
       containers:
       - name: backend-api-2-pods
 
@@ -41,7 +41,7 @@ spec:
           initialDelaySeconds: 3
           periodSeconds: 20
 
-        resources:
-          requests:
-            memory: "256M"
-            cpu: 0.25
+        # resources:
+        #   requests:
+        #     memory: "256M"
+        #     cpu: 0.25
