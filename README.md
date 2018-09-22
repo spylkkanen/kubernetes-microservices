@@ -694,3 +694,8 @@ Azure NgInx controller install
 https://blogs.msdn.microsoft.com/mihansen/2018/05/31/kubernetes-ingress-in-azure-government/
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/cloud-generic.yaml
+
+
+Get azure DNS zone name.
+az aks show --resource-group spylkkanen-microservices --name spylkkanen --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
+

@@ -9,7 +9,7 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: apps.f791b2e6cfe44a199bfd.northeurope.aksapp.io
+  - host: spylkkanen.f791b2e6cfe44a199bfd.northeurope.aksapp.io
     http:
       paths:
       - path: /api/config
