@@ -24,6 +24,9 @@ spec:
         image: spylkkanen.azurecr.io/microservice-example-1/frontend:latest
         imagePullPolicy: Always
 
+      imagePullSecrets:
+      - name: acr-auth
+      
         ports:
         - containerPort: 3000
 

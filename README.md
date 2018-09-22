@@ -678,3 +678,13 @@ kubenetes <-> azure ACR authentication
 kubectl create secret docker-registry acr-auth --docker-server <AzureKubernetesClusterName>.azurecr.io --docker-username <AzureResourceGroupName> --docker-password <docker_password> --docker-email <email_address>
 
 https://mohitgoyal.co/2017/09/21/configure-cicd-for-dockerized-apps-using-vsts-to-kubernetes-cluster-in-acs/
+
+
+Create azure cluster connection.
+az aks get-credentials --resource-group <AzureResourceGroupName> --name <AzureKubernetesClusterName>
+
+Switch to azure cluster.
+kubectl config use-context <AzureKubernetesClusterName>
+
+Show Azure cluster information.
+kubectl cluster-info
