@@ -18,14 +18,14 @@ spec:
       labels:
         app: backend-api-1
     spec:
+      imagePullSecrets:
+      - name: acr-auth
+      
       containers:
       - name: backend-api-1-pods
 
         image: spylkkanen.azurecr.io/microservice-example-1/backend-api1:latest
         imagePullPolicy: Always
-      
-      imagePullSecrets:
-      - name: acr-auth
 
         ports:
         - containerPort: 3010
