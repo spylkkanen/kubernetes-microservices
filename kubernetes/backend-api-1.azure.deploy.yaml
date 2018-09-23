@@ -18,8 +18,8 @@ spec:
       labels:
         app: backend-api-1
     spec:
-      # imagePullSecrets:
-      # - name: acr-auth
+      imagePullSecrets:
+      - name: acr-auth
 
       containers:
       - name: backend-api-1-pods
