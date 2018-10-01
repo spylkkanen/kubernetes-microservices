@@ -39,7 +39,7 @@ spec:
             path: /api/health
             port: 3020
           initialDelaySeconds: 3
-          periodSeconds: 20
+          periodSeconds: 1800
 
         # resources:
         #   requests:

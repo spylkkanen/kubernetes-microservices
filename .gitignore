@@ -60,7 +60,7 @@ msbuild.err
 msbuild.wrn
 
 # These contain secrets! 
-.env
+#.env
 azure.json
 *.myparam.json
 appsettings.json

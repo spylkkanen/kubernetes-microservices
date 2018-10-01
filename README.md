@@ -659,43 +659,7 @@ kubectl exec -it frontend-866f7bff9f-7gf88 -- /bin/bash
 ```
 ---
 
+# Azure and VSTS CI/CD integration
+[Visual Studio Team Service CI/CD configuration](https://github.com/spylkkanen/kubernetes-microservices/docs/Azure-and-VSTS/README.md)
 
-# Azure
-
-az acr login --name <AzureContainerRegistryName>
-
-kubectl config use-context <AzureKubernetesClusterName>
-
-https://github.com/dtzar/blog/tree/master/CD-Kubernetes-VSTS
-1. Create VSTS pipeline
-2. Add Kubernetes service to VSTS and create connection between VSTS and Kubernetes
-az aks create --name <AzureKubernetesClusterName> --resource-group <AzureResourceGroupName> --generate-ssh-keys
-3. kubectl config view
-- ${HOME}/.kube/config for Linux systems
-- %UserProfile%\.kube\config for Windows machines
-
-kubenetes <-> azure ACR authentication
-kubectl create secret docker-registry acr-auth --docker-server <AzureKubernetesClusterName>.azurecr.io --docker-username <AzureResourceGroupName> --docker-password <docker_password> --docker-email <email_address>
-
-https://mohitgoyal.co/2017/09/21/configure-cicd-for-dockerized-apps-using-vsts-to-kubernetes-cluster-in-acs/
-
-
-Create azure cluster connection.
-az aks get-credentials --resource-group <AzureResourceGroupName> --name <AzureKubernetesClusterName>
-
-Switch to azure cluster.
-kubectl config use-context <AzureKubernetesClusterName>
-
-Show Azure cluster information.
-kubectl cluster-info
-
-
-Azure NgInx controller install
-https://blogs.msdn.microsoft.com/mihansen/2018/05/31/kubernetes-ingress-in-azure-government/
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/cloud-generic.yaml
-
-
-Get azure DNS zone name.
-az aks show --resource-group spylkkanen-microservices --name spylkkanen --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
 

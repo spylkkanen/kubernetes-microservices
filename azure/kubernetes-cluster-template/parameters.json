@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "value": "microservice-cluster"
+        },
+        "location": {
+            "value": ""
+        },
+        "dnsPrefix": {
+            "value": "microservice"
+        },
+        "agentCount": {
+            "value": 1
+        },
+        "agentVMSize": {
+            "value": "Standard_B2ms"
+        },
+        "servicePrincipalClientId": {
+            "value": null
+        },
+        "servicePrincipalClientSecret": {
+            "value": null
+        },
+        "kubernetesVersion": {
+            "value": "1.11.2"
+        },
+        "workspaceName": {
+            "value": ""
+        },
+        "omsWorkspaceId": {
+            "value": ""
+        },
+        "workspaceRegion": {
+            "value": ""
+        },
+        "enableHttpApplicationRouting": {
+            "value": true
+        },
+        "networkPlugin": {
+            "value": "kubenet"
+        },
+        "enableRBAC": {
+            "value": false
+        }
+    }
+}
