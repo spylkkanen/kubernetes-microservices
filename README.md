@@ -660,6 +660,6 @@ kubectl exec -it frontend-866f7bff9f-7gf88 -- /bin/bash
 ---
 
 # Azure and VSTS CI/CD integration
-[Visual Studio Team Service CI/CD configuration](https://github.com/spylkkanen/kubernetes-microservices/docs/Azure-and-VSTS/README.md)
+[Visual Studio Team Service CI/CD configuration](https://github.com/spylkkanen/kubernetes-microservices/tree/master/docs/Azure-and-VSTS)
 
 
