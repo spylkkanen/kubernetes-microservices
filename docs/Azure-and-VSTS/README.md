@@ -76,7 +76,22 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 
 ## Continuous Integration (CI)
 
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_services_kubernetes_authentication.png)
+
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_ci_build_images.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_ci_build_images_agent_job.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_ci_build_images_agent_build_services.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_ci_build_images_agent_push_services.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_ci_build_images_agent_publish_artifact.png)
+
 ## Continuous Delivery (CD)
+
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline_artifact_github.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline_artifact_azurecr_deployment_trigger.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline_artifact_azurecr.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline_agent_job.png)
+![](https://github.com/spylkkanen/kubernetes-microservices/blob/master/docs/Azure-and-VSTS/vsts_cd_pipeline_agent_k8s_deploy.png)
 
 
 # Other Azure notes
