@@ -1,25 +1,21 @@
 version: 2.1
 orbs:
   eaas-orb: roost-eaas-orb/eaas-orb@1.0.1
-workflows:
-  use-my-orb:
-    jobs:
-      - eaas-orb/createcluster:
-          alias: ''
-          ami: ubuntu focal 20.04
-          auth_token: ROOST_AUTH_TOKEN
-          cluster_expires_in_hours: '1'
-          disk_size: '50'
-          email: support@zb.io
-          ent_server: ROOST_SERVER
-          instance_type: t3.large
-          k8s_version: 1.22.2
-          namespace: roost-codespace
-          num_workers: '1'
-          preemptible: 'false'
-          region: us-west-1
+jobs: 
+  test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      # Run your orb's commands to validate them.
       - eaas-orb/triggereaas:
           application_name: kubernetes-microservices-1
           auth_token: ROOST_AUTH_TOKEN
           ent_server: ROOST_SERVER
           pipeline_project_type: github
+workflows:
+  test-workflow:
+    jobs:
+      - test
+  
+  
