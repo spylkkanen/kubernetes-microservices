@@ -1,26 +1,25 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+orbs:
+  eaas-orb: roost-eaas-orb/eaas-orb@1.0.1
 workflows:
-  say-hello-workflow:
+  use-my-orb:
     jobs:
-      - say-hello
+      - eaas-orb/createcluster:
+          alias: ''
+          ami: ubuntu focal 20.04
+          auth_token: ROOST_AUTH_TOKEN
+          cluster_expires_in_hours: '1'
+          disk_size: '50'
+          email: support@zb.io
+          ent_server: ROOST_SERVER
+          instance_type: t3.large
+          k8s_version: 1.22.2
+          namespace: roost-codespace
+          num_workers: '1'
+          preemptible: 'false'
+          region: us-west-1
+      - eaas-orb/triggereaas:
+          application_name: kubernetes-microservices-1
+          auth_token: ROOST_AUTH_TOKEN
+          ent_server: ROOST_SERVER
+          pipeline_project_type: github
